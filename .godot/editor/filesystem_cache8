@@ -7,11 +7,11 @@ README.md::TextFile::-1::1712104584::0::1::::<><>::
 tablero.gd::GDScript::-1::1712196368::0::1::::<>Node2D<>::
 tablero.tscn::PackedScene::3952378171566170577::1712195746::0::1::::<><>::uid://c87uc7r6sd0rf::::res://tiles/Green.png<>uid://b851o1ap2iyix::::res://tiles/Solid_red.png<>res://Scripts/TileMap.gd
 ::res://Scenes/::1712107997
-Tablero.tscn::PackedScene::1071428551003804591::1712196614::0::1::::<><>::uid://bwktddicybl74::::res://Prefabs/tablero.tscn<>uid://bhtwhk0oq035o::::res://icon.svg<>res://Scripts/TileMap.gd
+Tablero.tscn::PackedScene::1071428551003804591::1712197596::0::1::::<><>::uid://bwktddicybl74::::res://Prefabs/tablero.tscn<>uid://bhtwhk0oq035o::::res://icon.svg<>res://Scripts/TileMap.gd
 ::res://Scripts/::1712107747
 CharacterBody2D.gd::GDScript::-1::1712109268::0::1::::<>CharacterBody2D<>::
 NodeJuan2D.gd::GDScript::-1::1712195542::0::1::::<>Node2D<>::
-TileMap.gd::GDScript::-1::1712196614::0::1::::<>Node2D<>::
+TileMap.gd::GDScript::-1::1712197554::0::1::::<>Node2D<>::
 ::res://tiles/::1712190366
 Green.png::CompressedTexture2D::7156352915455901955::1712190362::1712196662::1::::<><>::
 Solid_red.png::CompressedTexture2D::4766188865621618263::1712190396::1712196662::1::::<><>::

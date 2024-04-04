@@ -1,18 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://pjajic174c1l"]
+[gd_scene load_steps=6 format=3 uid="uid://pjajic174c1l"]
 
-[ext_resource type="PackedScene" uid="uid://bwktddicybl74" path="res://Prefabs/tablero.tscn" id="1_w51mg"]
+[ext_resource type="Texture2D" uid="uid://c87uc7r6sd0rf" path="res://tiles/Green.png" id="1_c5y60"]
+[ext_resource type="Script" path="res://Scripts/NodeJuan2D.gd" id="2_3ep80"]
 [ext_resource type="Texture2D" uid="uid://bhtwhk0oq035o" path="res://icon.svg" id="2_dk7l8"]
-[ext_resource type="Script" path="res://Scripts/TileMap.gd" id="3_fpccu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtt7j"]
+texture = ExtResource("1_c5y60")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cuvod"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_gtt7j")
 
 [node name="Escena" type="Node2D"]
 position = Vector2(495, 211)
 
-[node name="tablero" parent="." instance=ExtResource("1_w51mg")]
-script = ExtResource("3_fpccu")
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -2)
+tile_set = SubResource("TileSet_cuvod")
+rendering_quadrant_size = 128
+format = 2
+layer_0/tile_data = PackedInt32Array(-65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -131067, 0, 0, -131066, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0)
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("2_3ep80")
 
 [node name="NodeJuan2D" type="Node2D" parent="."]
-position = Vector2(-439, -141)
+position = Vector2(-137, 21)
 scale = Vector2(0.739711, 0.739711)
 
 [node name="Sprite2D" type="Sprite2D" parent="NodeJuan2D"]
+position = Vector2(-14.8707, -64.8902)
 texture = ExtResource("2_dk7l8")
+
+[node name="Camera2D" type="Camera2D" parent="NodeJuan2D/Sprite2D"]
+position = Vector2(608.346, 252.801)
+scale = Vector2(1.35188, 1.35188)
