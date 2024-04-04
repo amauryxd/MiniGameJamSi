@@ -1,0 +1,4 @@
+res://Scenes/Tablero.tscn
+res://Scenes/TileMap.gd
+res://Scripts/NodeJuan2D.gd
+res://Scripts/TileMap.gd

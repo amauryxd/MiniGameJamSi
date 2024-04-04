@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://pjajic174c1l"]
+
+[ext_resource type="PackedScene" uid="uid://bwktddicybl74" path="res://Prefabs/tablero.tscn" id="1_w51mg"]
+[ext_resource type="Texture2D" uid="uid://bhtwhk0oq035o" path="res://icon.svg" id="2_dk7l8"]
+[ext_resource type="Script" path="res://Scripts/TileMap.gd" id="3_fpccu"]
+
+[node name="Escena" type="Node2D"]
+position = Vector2(495, 211)
+
+[node name="tablero" parent="." instance=ExtResource("1_w51mg")]
+script = ExtResource("3_fpccu")
+
+[node name="NodeJuan2D" type="Node2D" parent="."]
+position = Vector2(-439, -141)
+scale = Vector2(0.739711, 0.739711)
+
+[node name="Sprite2D" type="Sprite2D" parent="NodeJuan2D"]
+texture = ExtResource("2_dk7l8")
