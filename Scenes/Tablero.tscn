@@ -1,41 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://pjajic174c1l"]
+[gd_scene load_steps=5 format=3 uid="uid://pjajic174c1l"]
 
-[ext_resource type="Texture2D" uid="uid://c87uc7r6sd0rf" path="res://tiles/Green.png" id="1_c5y60"]
-[ext_resource type="Script" path="res://Scripts/NodeJuan2D.gd" id="2_3ep80"]
+[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="1_g415h"]
 [ext_resource type="Texture2D" uid="uid://bhtwhk0oq035o" path="res://icon.svg" id="2_dk7l8"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtt7j"]
-texture = ExtResource("1_c5y60")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbx3a"]
+size = Vector2(11.701, 41.0506)
 
-[sub_resource type="TileSet" id="TileSet_cuvod"]
-tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_gtt7j")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03sgo"]
 
-[node name="Escena" type="Node2D"]
-position = Vector2(495, 211)
+[node name="Control" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, -2)
-tile_set = SubResource("TileSet_cuvod")
-rendering_quadrant_size = 128
-format = 2
-layer_0/tile_data = PackedInt32Array(-65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -131067, 0, 0, -131066, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0)
-layer_1/tile_data = PackedInt32Array()
-script = ExtResource("2_3ep80")
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
 
-[node name="NodeJuan2D" type="Node2D" parent="."]
-position = Vector2(-137, 21)
-scale = Vector2(0.739711, 0.739711)
+[node name="A1" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+script = ExtResource("1_g415h")
 
-[node name="Sprite2D" type="Sprite2D" parent="NodeJuan2D"]
-position = Vector2(-14.8707, -64.8902)
+[node name="Area2D" type="Area2D" parent="HBoxContainer/A1"]
+position = Vector2(12, 34)
+scale = Vector2(-4.1486, -1.26709)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/A1/Area2D"]
+position = Vector2(-2.74614, 7.42405)
+scale = Vector2(1, 0.993561)
+shape = SubResource("RectangleShape2D_mbx3a")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(104, 33)
+scale = Vector2(0.290881, 0.290881)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_03sgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("2_dk7l8")
 
-[node name="Camera2D" type="Camera2D" parent="NodeJuan2D/Sprite2D"]
-position = Vector2(608.346, 252.801)
-scale = Vector2(1.35188, 1.35188)
+[connection signal="mouse_entered" from="HBoxContainer/A1" to="HBoxContainer/A1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/A1" to="HBoxContainer/A1" method="_on_mouse_exited"]
