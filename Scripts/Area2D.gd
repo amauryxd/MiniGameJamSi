@@ -8,7 +8,7 @@ var isOnTile=false
 		#print("It is a mouse click.")
 
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and isOnTile == true:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		print(event)
 		print("It is a mouse click.")
 
