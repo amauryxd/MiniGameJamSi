@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtusvlpiuwymo"]
+
+[ext_resource type="Script" path="res://Scenes/PlyBullet.gd" id="1_ho4e8"]
+[ext_resource type="Texture2D" uid="uid://cbx2t0x5vk6ak" path="res://Scenes/Sprite-0001.png" id="2_d8tw0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whrwk"]
+radius = 15.1327
+
+[node name="PlyBullet" type="Area2D" groups=["PlyBullet"]]
+scale = Vector2(0.319367, 0.319367)
+script = ExtResource("1_ho4e8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_whrwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -0.5)
+rotation = -0.919938
+scale = Vector2(0.129258, 0.125457)
+texture = ExtResource("2_d8tw0")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(-2.69376, -2.69376)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

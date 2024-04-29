@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cuwxpa3sfr7f8"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy.gd" id="1_deadg"]
+[ext_resource type="Texture2D" uid="uid://be3w7opmhcmm" path="res://artexd/bossMamalon1.png" id="2_cakr0"]
+[ext_resource type="Script" path="res://Scenes/FiniteStateMahcine.gd" id="3_jdqob"]
+[ext_resource type="Script" path="res://Scenes/Idle.gd" id="4_durng"]
+[ext_resource type="Script" path="res://Scenes/5Leaf.gd" id="5_v5vkq"]
+[ext_resource type="Script" path="res://Scenes/4Leaf.gd" id="6_5hnev"]
+[ext_resource type="Script" path="res://Scenes/3Leaf.gd" id="7_0anff"]
+[ext_resource type="Script" path="res://Scenes/2Leaf.gd" id="8_nuj7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qfsk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0oni"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_deadg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.06914, 6.06914)
+texture = ExtResource("2_cakr0")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+scale = Vector2(-9.46131, -9.46131)
+shape = SubResource("RectangleShape2D_5qfsk")
+debug_color = Color(0.964706, 0, 0.486275, 0.419608)
+
+[node name="Speed" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Duration" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="debug" type="Label" parent="."]
+offset_left = -83.0
+offset_top = -174.0
+offset_right = -33.0
+offset_bottom = -151.0
+scale = Vector2(3.19695, 3.19695)
+text = "Debug"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+scale = Vector2(-3.22321, -3.22321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+unique_name_in_owner = true
+scale = Vector2(61.3932, 61.3932)
+shape = SubResource("CircleShape2D_t0oni")
+
+[node name="FiniteStateMahcine" type="Node2D" parent="."]
+scale = Vector2(61.3932, 61.3932)
+script = ExtResource("3_jdqob")
+
+[node name="Idle" type="Node2D" parent="FiniteStateMahcine"]
+script = ExtResource("4_durng")
+
+[node name="5Leaf" type="Node2D" parent="FiniteStateMahcine"]
+script = ExtResource("5_v5vkq")
+
+[node name="4Leaf" type="Node2D" parent="FiniteStateMahcine"]
+script = ExtResource("6_5hnev")
+
+[node name="3Leaf" type="Node2D" parent="FiniteStateMahcine"]
+script = ExtResource("7_0anff")
+
+[node name="2Leaf" type="Node2D" parent="FiniteStateMahcine"]
+script = ExtResource("8_nuj7j")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Speed" to="." method="_on_speed_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMahcine/Idle" method="_on_player_entered"]

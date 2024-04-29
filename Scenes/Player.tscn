@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8xspqcr37cw"]
+
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_plx5d"]
+[ext_resource type="Texture2D" uid="uid://ds7obpc7o11cg" path="res://artexd/360_F_538475184_GLbo0Q4Hr07DLSUg22JRkd3TcIUlo1SJ.png" id="2_rfdh2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql6v4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vak7"]
+
+[node name="Player" type="CharacterBody2D"]
+disable_mode = 2
+script = ExtResource("1_plx5d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 1)
+scale = Vector2(0.708059, 0.708059)
+texture = ExtResource("2_rfdh2")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -72)
+gizmo_extents = 64.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-6.22903, -8.60129)
+shape = SubResource("RectangleShape2D_ql6v4")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+scale = Vector2(3.38838, 3.38838)
+shape = SubResource("CircleShape2D_5vak7")
+
+[node name="iframe" type="Timer" parent="."]
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="iframe" to="." method="_on_iframe_timeout"]

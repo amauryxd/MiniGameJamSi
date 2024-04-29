@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd5xptpk0r23f"]
+
+[ext_resource type="Texture2D" uid="uid://08iq7r48thyu" path="res://artexd/casino-chip-3d-design-elements-free-png.png" id="1_1852p"]
+[ext_resource type="Script" path="res://Scenes/EnemyBullet.gd" id="1_vb3j8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptwq0"]
+
+[node name="EnemyBullet" type="Area2D" groups=["EnemyBullet"]]
+scale = Vector2(1.83489, 1.83489)
+script = ExtResource("1_vb3j8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0114955, 0.0114955)
+texture = ExtResource("1_1852p")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.706887, 0.706887)
+shape = SubResource("CircleShape2D_ptwq0")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_screen_exited"]
